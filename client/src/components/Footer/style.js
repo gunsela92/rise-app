@@ -16,6 +16,14 @@ export const FooterWrapper = styled.div`
 
 export const GitHubLink = styled.div`
   color: ${({ theme }) => theme.colors.labelColors};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+
+  & > a:visited {
+    color: unset;
+  }
 `;
 
 export const GitIcon = styled.img`

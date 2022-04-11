@@ -7,6 +7,9 @@ const Footer = () => {
     <FooterWrapper>
       <GitHubLink>
         <GitIcon src={GitHubIcon} alt={"Github Link"} />
+        <a href={"https://github.com/gunsela92/rise-app"} target={"_blank"} rel="noreferrer">
+          repository
+        </a>
       </GitHubLink>
       <AuthorText>
         © {new Date().getFullYear()} Günsel Akkemik

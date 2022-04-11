@@ -58,7 +58,7 @@ const theme = {
     transparentBlack: "rgba(0,0,0,0.4)",
     inputBorders: "#E0E0E0",
     labelColors: "rgba(128,128,128,0.83)",
-    footerBackground: "#e5e5e5",
+    footerBackground: "#f1f1f1",
   },
   backgrounds: {
     headerBackground: "#151515",
