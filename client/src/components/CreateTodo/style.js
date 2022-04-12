@@ -7,6 +7,9 @@ export const CreateTodoWrapper = styled.div`
   padding: 0 20px;
   box-sizing: border-box;
   margin-bottom: 30px;
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    padding: 0 10px;
+  }
 `;
 
 export const CreateTitle = styled.h4``;
@@ -19,7 +22,7 @@ export const InputLabels = styled.label`
   }
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   display: grid;
   grid-template-columns: 1fr 200px 100px;
   grid-gap: 20px;
@@ -72,4 +75,31 @@ export const CreateButton = styled.button`
 export const PlusIcon = styled(FontAwesomeIcon)`
   margin-right: 10px;
   font-size: 18px;
+`;
+
+export const ErrorModalInner = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const ErrorIcon = styled(FontAwesomeIcon)`
+  font-size: 120px;
+  color: ${({theme}) => theme.colors.red};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: 80px;
+  }
+`;
+
+export const ErrorMessage = styled.span`
+  font-size: 20px;
+  color: ${({theme}) => theme.colors.black};
+  margin-top: 20px;
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: 16px;
+  }
 `;

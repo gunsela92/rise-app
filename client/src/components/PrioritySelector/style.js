@@ -28,8 +28,8 @@ export const SelectorWrapper = styled.div`
   max-width: 198px;
   user-select: none;
   background: ${({theme}) => theme.colors.white};
-  height: ${({isActive}) => isActive ? "auto" : "0"};
-  opacity: ${({isActive}) => isActive ? "1" : "0"};
+  height: ${({active}) => active ? "auto" : "0"};
+  opacity: ${({active}) => active ? "1" : "0"};
   transition: all 0.3s ease-in-out;
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
@@ -54,6 +54,6 @@ export const SelectorItems = styled.div`
 
 export const SelectorIcon = styled(FontAwesomeIcon)`
   margin-left: 10px;
-  transform: ${({isActive}) => isActive ? "rotate(180deg)" : "rotate(0deg)"};
+  transform: ${({active}) => active ? "rotate(180deg)" : "rotate(0deg)"};
   transition: transform 0.3s ease-in-out;
 `;

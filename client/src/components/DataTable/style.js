@@ -11,7 +11,11 @@ export const DataTableContainer = styled.div`
   border: ${({ theme }) => theme.colors.borderColor};
   padding: 0 20px;
   box-sizing: border-box;
-  overflow: scroll;
+  overflow-x: hidden;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    padding: 0 10px;
+  }
 `;
 
 export const DataTableItems = styled.div`
@@ -31,6 +35,7 @@ export const DataTableItems = styled.div`
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
     font-size: 12px;
+    padding: 10px 5px;
   }
 `;
 

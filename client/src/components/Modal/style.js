@@ -6,21 +6,23 @@ export const ModalBackDrop = styled.div`
   height: 100%;
   width: 100%;
   position: absolute;
-  top: ${({ show }) => show ? "0" : "-900px"};
+  top: ${({ show }) => show ? "0" : "-1500px"};
   z-index: 11;
   left: 0;
+  transition: top .2s;
 `;
 
 export const ModalContainer = styled.div`
   position: absolute;
   left: 50%;
-  top: ${({ show }) => show ? "50%" : "-900px"};
+  top: ${({ show }) => show ? "50%" : "-1500px"};
   transform: translate(-50%,-50%);
   background-color: white;
-  min-height: 450px;
-  min-width: 750px;
+  min-height: ${({type}) => type === "error" ? "250px" : "450px"};
+  width: ${({type}) => type === "error" ? "400px" : "750px"};
   border-radius: 5px;
   transition: all .5s;
+  max-width: 100%;
 `;
 
 export const ModalTitle = styled.div`

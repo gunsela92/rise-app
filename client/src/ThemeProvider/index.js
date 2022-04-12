@@ -32,6 +32,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.regular};
     margin: 0;
   }
+
+  /* ScrollBar */
+  :not(html):not(body)::-webkit-scrollbar {width: 7px;height: 3px;}
+  :not(html):not(body)::-webkit-scrollbar-track {border-radius: 3.5px;background-color: transparent; }
+  :not(html):not(body)::-webkit-scrollbar-thumb {background: ${({ theme }) => theme.colors.infoColor};border-radius: 3.5px;}
+  :not(html):not(body)::-webkit-scrollbar-thumb:hover {background: ${({ theme }) => theme.colors.infoColor};}
+  * {-webkit-overflow-scrolling:touch; -ms-overflow-style: -ms-autohiding-scrollbar; }
+  /* ScrollBar */
 `;
 
 const breakPoints = {
@@ -47,6 +55,7 @@ const theme = {
   colors: {
     white: "#FFFFFF",
     black: "#000000",
+    red: "#FF0000",
     borderColor: "rgba(210,210,210,0.41)",
     trivialColor: "#1890ff",
     urgentColor: "#d54755",

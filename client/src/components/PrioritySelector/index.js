@@ -30,9 +30,9 @@ const PrioritySelector = ({ onSelectPriority, selectedPriority }) => {
     <PrioritySelectorWrapper>
       <SelectorPlaceHolder onClick={() => setIsActive(!isActive)}>
         {selectedPriority}
-        <SelectorIcon icon={faAngleDown} isActive={isActive} />
+        <SelectorIcon icon={faAngleDown} active={isActive ? 1 : 0} />
       </SelectorPlaceHolder>
-      <SelectorWrapper isActive={isActive} ref={ref}>
+      <SelectorWrapper active={isActive} ref={ref}>
         {isActive && (
           <>
             {priorities.map((priority, index) => (

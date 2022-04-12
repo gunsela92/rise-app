@@ -1,4 +1,4 @@
-import {SET_MOCK_DATA, ADD_TODO} from "../actions/index";
+import {SET_MOCK_DATA, ADD_TODO, DELETE_TODO, UPDATE_TODO} from "../actions/index";
 const initialState = { MOCK_DATA: [] }
 
 const AppReducer = (state = initialState, action) => {
@@ -16,6 +16,16 @@ const AppReducer = (state = initialState, action) => {
       MOCK_DATA: [...state.MOCK_DATA, action.payload]
     }
   }
+  case DELETE_TODO:
+    return {
+      ...state,
+      MOCK_DATA: state.MOCK_DATA.filter(todo => todo.id !== action.payload)
+    }
+  case UPDATE_TODO:
+    return {
+      ...state,
+      MOCK_DATA: state.MOCK_DATA.map(todo => todo.id === action.payload.id ? action.payload : todo)
+    }
   default:
     return state
   }

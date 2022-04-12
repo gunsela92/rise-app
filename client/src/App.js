@@ -33,12 +33,12 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <Navbar />
       <CreateTodo />
       <DataTable />
       <Footer />
-    </div>
+    </>
   );
 }
 
