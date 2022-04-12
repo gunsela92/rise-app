@@ -6,8 +6,8 @@ import {setMockData} from "./redux/DataReducer/actions";
 import Navbar from "./components/Navbar";
 import CreateTodo from "./components/CreateTodo";
 import Footer from "./components/Footer";
-import DataTable from "./components/DataTable";
 import Notification from "./components/Notification";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <Notification />
       <CreateTodo />
-      <DataTable />
+      <MainContainer />
       <Footer />
     </>
   );

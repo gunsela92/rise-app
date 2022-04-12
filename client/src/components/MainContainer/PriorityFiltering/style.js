@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export const PrioritySelectorWrapper = styled.div`
+export const PriorityFilterWrapper = styled.div`
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
-  margin-top: 10px;
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
   background-color: ${({theme}) => theme.colors.white};
+  margin-left: 10px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    margin: 0;
+  }
 `;
 
-export const SelectorPlaceHolder = styled.div`
+export const PriorityFilterPlaceHolder = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -21,13 +25,13 @@ export const SelectorPlaceHolder = styled.div`
   color: ${({theme, disabled}) => disabled ? theme.colors.labelColors : theme.colors.black};
 `;
 
-export const SelectorWrapper = styled.div`
+export const PriorityFilterSelectorWrapper = styled.div`
   position: absolute;
   border-radius: 3px;
-  margin-top: 10px;
+  margin-top: 5px;
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
   width: 100%;
-  max-width: 198px;
+  max-width: 288px;
   user-select: none;
   background: ${({theme}) => theme.colors.white};
   height: ${({active}) => active ? "auto" : "0"};
@@ -39,7 +43,7 @@ export const SelectorWrapper = styled.div`
   }
 `;
 
-export const SelectorItems = styled.div`
+export const PriorityFilterItems = styled.div`
   padding: 10px;
   border-bottom: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
   cursor: pointer;
@@ -54,7 +58,7 @@ export const SelectorItems = styled.div`
   }
 `;
 
-export const SelectorIcon = styled(FontAwesomeIcon)`
+export const PriorityFilterIcon = styled(FontAwesomeIcon)`
   margin-left: 10px;
   transform: ${({active}) => active ? "rotate(180deg)" : "rotate(0deg)"};
   transition: transform 0.3s ease-in-out;

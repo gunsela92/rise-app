@@ -3,35 +3,35 @@ import {
   ActionButtons, ButtonsWrapper, CancelEditButton,
   DataTableButton,
   DataTableContainer,
-  DataTableItems, EditInputLabels, EditJobInput, EditModalContainer,
+  DataTableItems, DataTableTitles, EditInputLabels, EditJobInput, EditModalContainer,
   EditModalInputs, SaveEditButton
 } from "./style";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {faPen, faTrashCan} from "@fortawesome/free-solid-svg-icons";
-import PriorityBadge from "../PriorityBadge";
-import {deleteTodo, updateTodo} from "../../redux/DataReducer/actions";
-import {sendMessage} from "../../redux/Notifications/actions";
-import Modal from "../Modal";
-import PrioritySelector from "../PrioritySelector";
-import Priorities from "../PrioritySelector/priorities";
+import PriorityBadge from "../../PriorityBadge";
+import {deleteTodo, updateTodo} from "../../../redux/DataReducer/actions";
+import {sendMessage} from "../../../redux/Notifications/actions";
+import Modal from "../../Modal";
+import PrioritySelector from "../../PrioritySelector";
+import Priorities from "../../PrioritySelector/priorities";
+import PropTypes from "prop-types";
 
-const DataTable = () => {
-  const {MOCK_DATA} = useSelector(state => state.AppReducer);
+const DataTable = ({mainData}) => {
   const [editValues, setEditValues] = useState({id: 0, title: "", priority: "Urgent"});
   const [showEdit, setShowEdit] = useState(false);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    dispatch(deleteTodo(id))
-    dispatch(sendMessage({type: "success", message: "Job Deleted."}))
+    dispatch(deleteTodo(id));
+    dispatch(sendMessage({type: "success", message: "Job Deleted."}));
   }
 
   const handlePrioritySelect = (priority) => {
-    setEditValues({...editValues, priority: priority})
+    setEditValues({...editValues, priority: priority});
   };
 
   const handleJobName = (value) => {
-    setEditValues({...editValues, title: value})
+    setEditValues({...editValues, title: value});
   };
 
   const handleModal = (todo) => {
@@ -57,8 +57,13 @@ const DataTable = () => {
   return (
     <>
       <DataTableContainer>
-        {MOCK_DATA?.length > 0 && (
-          MOCK_DATA.map(item => (
+        <DataTableTitles>
+          <span>Name</span>
+          <span>Priority</span>
+          <span>Action</span>
+        </DataTableTitles>
+        {mainData?.length > 0 && (
+          mainData.map(item => (
             <DataTableItems key={item.id}>
               <span>{item.title}</span>
               <PriorityBadge priority={item.priority}/>
@@ -91,5 +96,9 @@ const DataTable = () => {
     </>
   );
 };
+
+DataTable.propTypes = {
+  mainData: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 
 export default DataTable;

@@ -68,6 +68,7 @@ const theme = {
     transparentBlack: "rgba(0,0,0,0.4)",
     inputBorders: "#E0E0E0",
     labelColors: "rgba(128,128,128,0.83)",
+    placeHolderColors: "rgb(196,195,195)",
     footerBackground: "#f1f1f1",
     buttonBackgrounds: "rgba(225,225,225,0.82)",
     dataItemBackgrounds: "rgba(236,236,236,0.73)",
