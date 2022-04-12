@@ -6,6 +6,7 @@ import {setMockData} from "./redux/actions";
 import Navbar from "./components/Navbar";
 import CreateTodo from "./components/CreateTodo";
 import Footer from "./components/Footer";
+import DataTable from "./components/DataTable";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function App() {
     <div>
       <Navbar />
       <CreateTodo />
+      <DataTable />
       <Footer />
     </div>
   );

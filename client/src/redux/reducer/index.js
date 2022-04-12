@@ -1,4 +1,4 @@
-import {SET_MOCK_DATA} from "../actions/index";
+import {SET_MOCK_DATA, ADD_TODO} from "../actions/index";
 const initialState = { MOCK_DATA: [] }
 
 const AppReducer = (state = initialState, action) => {
@@ -8,6 +8,14 @@ const AppReducer = (state = initialState, action) => {
       ...state,
       MOCK_DATA: action.payload
     }
+  case ADD_TODO: {
+    const maxId = state.MOCK_DATA.reduce((max, todo) => Math.max(max, todo.id), 0);
+    action.payload.id = maxId + 1;
+    return {
+      ...state,
+      MOCK_DATA: [...state.MOCK_DATA, action.payload]
+    }
+  }
   default:
     return state
   }

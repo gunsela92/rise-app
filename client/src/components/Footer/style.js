@@ -10,7 +10,7 @@ export const FooterWrapper = styled.div`
   padding: 0 20px;
   font-size: 14px;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 `;
 

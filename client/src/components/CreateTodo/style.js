@@ -4,9 +4,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export const CreateTodoWrapper = styled.div`
   display: block;
   width: 100%;
-  min-height: 300px;
   padding: 0 20px;
   box-sizing: border-box;
+  margin-bottom: 30px;
 `;
 
 export const CreateTitle = styled.h4``;
