@@ -49,7 +49,7 @@ Modal.propTypes = {
 }
 
 Modal.defaultProps = {
-  type: "default",
+  type: "edit",
 }
 
 export default Modal;

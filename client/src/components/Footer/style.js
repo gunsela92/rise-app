@@ -24,14 +24,25 @@ export const GitHubLink = styled.div`
   & > a:visited {
     color: unset;
   }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: 12px;
+  }
 `;
 
 export const GitIcon = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    margin-right: 5px;
+  }
 `;
 
 export const AuthorText = styled.span`
   color: ${({ theme }) => theme.colors.labelColors};
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: 12px;
+  }
 `;

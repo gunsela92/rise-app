@@ -4,7 +4,7 @@ import {PrioritySelectorWrapper, SelectorIcon, SelectorItems, SelectorPlaceHolde
 import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
-const PrioritySelector = ({ onSelectPriority, selectedPriority }) => {
+const PrioritySelector = ({ onSelectPriority, selectedPriority, disabled }) => {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef(null);
 
@@ -28,7 +28,7 @@ const PrioritySelector = ({ onSelectPriority, selectedPriority }) => {
 
   return (
     <PrioritySelectorWrapper>
-      <SelectorPlaceHolder onClick={() => setIsActive(!isActive)}>
+      <SelectorPlaceHolder onClick={() => !disabled && setIsActive(!isActive)} disabled={disabled}>
         {selectedPriority}
         <SelectorIcon icon={faAngleDown} active={isActive ? 1 : 0} />
       </SelectorPlaceHolder>
@@ -48,6 +48,11 @@ const PrioritySelector = ({ onSelectPriority, selectedPriority }) => {
 PrioritySelector.propTypes = {
   onSelectPriority: PropTypes.func.isRequired,
   selectedPriority: PropTypes.string.isRequired,
+  disabled: PropTypes.bool
+}
+
+PrioritySelector.defaultProps = {
+  disabled: false
 }
 
 export default PrioritySelector;

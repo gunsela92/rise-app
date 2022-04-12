@@ -2,11 +2,12 @@ import React, {useEffect} from "react";
 import getMockData from "./Services";
 import {getStorage, setStorage} from "./Utils/storageUtils";
 import {useDispatch} from "react-redux";
-import {setMockData} from "./redux/actions";
+import {setMockData} from "./redux/DataReducer/actions";
 import Navbar from "./components/Navbar";
 import CreateTodo from "./components/CreateTodo";
 import Footer from "./components/Footer";
 import DataTable from "./components/DataTable";
+import Notification from "./components/Notification";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Notification />
       <CreateTodo />
       <DataTable />
       <Footer />

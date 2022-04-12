@@ -17,6 +17,7 @@ export const SelectorPlaceHolder = styled.div`
   justify-content: space-between;
   padding: 15px;
   box-sizing: border-box;
+  color: ${({theme, disabled}) => disabled ? theme.colors.labelColors : theme.colors.black};
 `;
 
 export const SelectorWrapper = styled.div`

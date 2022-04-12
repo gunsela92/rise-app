@@ -4,7 +4,8 @@ export const BadgeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 150px;
+  max-width: 105px;
+  max-height: 35px;
   width: 100%;
   height: 100%;
   border-radius: 5px;

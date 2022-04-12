@@ -18,11 +18,11 @@ export const ModalContainer = styled.div`
   top: ${({ show }) => show ? "50%" : "-1500px"};
   transform: translate(-50%,-50%);
   background-color: white;
-  min-height: ${({type}) => type === "error" ? "250px" : "450px"};
-  width: ${({type}) => type === "error" ? "400px" : "750px"};
+  min-height: ${({type}) => type === "error" ? "250px" : "375px"};
+  width: ${({type}) => type === "error" ? "400px" : "550px"};
   border-radius: 5px;
   transition: all .5s;
-  max-width: 100%;
+  max-width: calc(100% - 20px);
 `;
 
 export const ModalTitle = styled.div`

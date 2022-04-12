@@ -64,6 +64,7 @@ const theme = {
     primaryButton: "#1890ff",
     primaryButtonHover: "#53aaff",
     primaryButtonActive: "#1890ff",
+    cancelColor: "#E8E8E8",
     transparentBlack: "rgba(0,0,0,0.4)",
     inputBorders: "#E0E0E0",
     labelColors: "rgba(128,128,128,0.83)",

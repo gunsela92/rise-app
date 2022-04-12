@@ -11,9 +11,10 @@ import {
 import {faPlus, faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 import PrioritySelector from "../PrioritySelector";
 import {useDispatch} from "react-redux";
-import {addTodo} from "../../redux/actions";
+import {addTodo} from "../../redux/DataReducer/actions";
 import Priorities from "../PrioritySelector/priorities";
 import Modal from "../Modal";
+import {sendMessage} from "../../redux/Notifications/actions";
 
 const CreateTodo = () => {
   const [selectedPriority, setSelectedPriority] = useState("Urgent");
@@ -37,6 +38,9 @@ const CreateTodo = () => {
       priority: priValue.id,
     }
     dispatch(addTodo(data));
+    dispatch(sendMessage({type: "success", message: "Job saved"}))
+    setJobName("");
+    setSelectedPriority("Urgent");
   }
 
   return (
@@ -46,7 +50,7 @@ const CreateTodo = () => {
         <InputContainer onSubmit={saveTodo}>
           <InputWrapper>
             <InputLabels>Job Name</InputLabels>
-            <CreateInput type="text" onChange={(e) => setJobName(e.target.value)}/>
+            <CreateInput type="text" onChange={(e) => setJobName(e.target.value)} value={jobName}/>
           </InputWrapper>
           <InputWrapper>
             <InputLabels>Job Priority</InputLabels>
