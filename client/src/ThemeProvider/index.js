@@ -65,7 +65,6 @@ const theme = {
     primaryButtonHover: "#53aaff",
     primaryButtonActive: "#1890ff",
     cancelColor: "#E8E8E8",
-    transparentBlack: "rgba(0,0,0,0.4)",
     inputBorders: "#E0E0E0",
     labelColors: "rgba(128,128,128,0.83)",
     placeHolderColors: "rgb(196,195,195)",
@@ -92,10 +91,6 @@ const theme = {
     medium: "16px",
     large: "18px",
     extraLarge: "20px",
-  },
-  darkModal: "#ffffff",
-  buttonColors: {
-    dark: "#22303c",
   },
   breakPoints,
 };

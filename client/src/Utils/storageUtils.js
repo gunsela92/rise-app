@@ -1,33 +1,15 @@
 const checkWindow = typeof window !== "undefined";
 
-export const setStorage = (key, value, type) => {
+export const setStorage = (key, value) => {
   if (checkWindow) {
-    if (type === "session") {
-      sessionStorage.setItem(key, JSON.stringify(value));
-    } else {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
+    localStorage.setItem(key, JSON.stringify(value));
   }
 };
 
-export const getStorage = (key, type) => {
+export const getStorage = (key) => {
   let storage;
   if (checkWindow) {
-    if (type === "session") {
-      storage = JSON.parse(sessionStorage.getItem(key));
-    } else {
-      storage = JSON.parse(localStorage.getItem(key));
-    }
+    storage = JSON.parse(localStorage.getItem(key));
   }
   return storage;
 };
-
-export const removeStorage = (key, type) => {
-  if (checkWindow) {
-    if (type === "session") {
-      sessionStorage.removeItem(key);
-    } else {
-      localStorage.removeItem(key);
-    }
-  }
-}
