@@ -1,4 +1,4 @@
-import React, { useMemo, useState} from "react";
+import React, {useMemo, useState} from "react";
 import {JobCount, JobListText, JobListTitles} from "./style";
 import {useSelector} from "react-redux";
 import DataTable from "./DataTable";
@@ -23,7 +23,7 @@ const MainContainer = () => {
         newData = newData.filter(item => item?.priority === priorityValue);
       }
     }
-    return newData;
+    return newData || [];
   }, [selectedPriority, searchValue, MOCK_DATA]);
 
   return (

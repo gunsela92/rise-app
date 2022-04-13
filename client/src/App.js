@@ -15,7 +15,7 @@ function App() {
   const getData = async () => {
     try {
       const res = await getMockData();
-      if (res?.status === 200) {
+      if (res?.status === 200 && Array.isArray(res?.data)) {
         setStorage("mockData", res?.data);
         dispatch(setMockData(res?.data))
       }
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     const userStorageData = getStorage("mockData");
     if (userStorageData === null) {
-      getData().then(r => console.log(r));
+      getData().catch(r => console.log(r));
     } else {
       dispatch(setMockData(userStorageData));
     }

@@ -10,8 +10,12 @@ const AppReducer = (state = initialState, action) => {
       MOCK_DATA: action.payload
     }
   case ADD_TODO: {
-    const maxId = state.MOCK_DATA.reduce((max, todo) => Math.max(max, todo.id), 0);
-    action.payload.id = maxId + 1;
+    if (state.MOCK_DATA.length > 0) {
+      const maxId = state.MOCK_DATA?.reduce((max, todo) => Math.max(max, todo.id), 0);
+      action.payload.id = maxId + 1;
+    } else {
+      action.payload.id = 1;
+    }
     const newData = [...state.MOCK_DATA, action.payload];
     setStorage("mockData", newData);
     return {
