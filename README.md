@@ -25,7 +25,6 @@ npm start
 - node-express,
 - Styled-components,
 - React JS, React & Redux
-- Font awesome
 - Axios
 - Eslint (for formatting)
 
