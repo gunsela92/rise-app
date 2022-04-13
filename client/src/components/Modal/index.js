@@ -1,6 +1,13 @@
 import React, {useEffect, useRef} from "react";
 import PropTypes from "prop-types";
-import {ModalBackDrop, ModalChildren, ModalCloseIcon, ModalCloseIconWrapper, ModalContainer, ModalTitle} from "./style";
+import {
+  ModalBackDrop,
+  ModalChildren,
+  ModalCloseIcon,
+  ModalCloseIconWrapper,
+  ModalContainer,
+  ModalHeader, ModalTitle,
+} from "./style";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({ show, close, title, type, children }) => {
@@ -26,13 +33,13 @@ const Modal = ({ show, close, title, type, children }) => {
   return (
     <ModalBackDrop show={show}>
       <ModalContainer show={show} ref={ref} type={type}>
-        <ModalTitle>
-          {title}
+        <ModalHeader>
           <ModalCloseIconWrapper onClick={closeModal}>
             <ModalCloseIcon icon={faTimes} />
           </ModalCloseIconWrapper>
-        </ModalTitle>
+        </ModalHeader>
         <ModalChildren>
+          {title && (<ModalTitle>{title}</ModalTitle>)}
           {children}
         </ModalChildren>
       </ModalContainer>
@@ -42,7 +49,7 @@ const Modal = ({ show, close, title, type, children }) => {
 
 Modal.propTypes = {
   show: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   close: PropTypes.func.isRequired,
   type: PropTypes.string,
   children: PropTypes.node.isRequired,

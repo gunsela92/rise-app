@@ -113,6 +113,22 @@ export const ButtonsWrapper = styled.div`
   margin-top: 10px;
 `;
 
+export const DeleteButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+  margin-top: 30px;
+`;
+
+export const DeleteModalIcon = styled(FontAwesomeIcon)`
+  display: block;
+  width: 100%;
+  height: 35px;
+  color: ${({ theme }) => theme.colors.red};
+  margin-bottom: 10px;
+`;
+
 export const SaveEditButton = styled.button`
   background-color: ${({ theme }) => theme.colors.urgentColor};
   padding: 12px 10px;

@@ -18,22 +18,28 @@ export const ModalContainer = styled.div`
   top: ${({ show }) => show ? "50%" : "-1500px"};
   transform: translate(-50%,-50%);
   background-color: white;
-  min-height: ${({type}) => type === "error" ? "250px" : "375px"};
+  min-height: ${({type}) => type === "error" ? "250px" : type === "edit" ? "200px" : "375px"};
   width: ${({type}) => type === "error" ? "400px" : "550px"};
   border-radius: 5px;
   transition: all .5s;
   max-width: calc(100% - 20px);
 `;
 
-export const ModalTitle = styled.div`
+export const ModalHeader = styled.div`
   max-width: 100%;
   height: 20px;
-  padding: 15px 10px;
   color: ${({theme}) => theme.colors.black};
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid ${({theme}) => theme.grayBorder};
+`;
+
+export const ModalTitle = styled.span`
+  width: 100%;
+  font-size: ${({theme}) => theme.fontSizes.extraLarge};
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
 `;
 
 export const ModalChildren = styled.div`
@@ -64,6 +70,7 @@ export const ModalCloseIconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 3px;
+  margin-top: 10px;
   &:hover {
     background-color: red;
     color: ${({theme}) => theme.colors.white};
