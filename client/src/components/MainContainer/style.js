@@ -12,11 +12,11 @@ export const JobListTitles = styled.div`
 `;
 
 export const JobListText = styled.span`
-  font-size: 16px;
+font-size: ${({ theme }) => theme.fontSizes.medium};
   font-weight: bold;
 `;
 
 export const JobCount = styled.span`
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   color: ${({theme}) => theme.colors.labelColors};
 `;

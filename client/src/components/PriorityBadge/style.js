@@ -11,7 +11,7 @@ export const BadgeWrapper = styled.div`
   border-radius: 5px;
   background-color: ${({theme, priority}) => priority === 1 ? theme.colors.trivialColor : priority === 2 ? theme.colors.regularColor : theme.colors.urgentColor};
   color: ${({theme}) => theme.colors.white};
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
     font-size: 12px;

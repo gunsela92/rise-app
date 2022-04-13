@@ -8,7 +8,7 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
@@ -19,7 +19,7 @@ export const GitHubLink = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
 
   & > a:visited {
     color: unset;

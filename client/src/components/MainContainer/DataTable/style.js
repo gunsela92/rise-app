@@ -27,7 +27,7 @@ export const DataTableTitles = styled.div`
   align-items: center;
   grid-gap: 5px;
   padding: 10px 10px 10px 20px;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   background-color: #E4EAFD;
   box-sizing: border-box;
   color: ${({ theme }) => theme.colors.labelColors};
@@ -42,7 +42,7 @@ export const DataTableItems = styled.div`
   align-items: center;
   grid-gap: 5px;
   padding: 10px 20px;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   max-height: 55px;
   box-sizing: border-box;
   :nth-child(even) {
@@ -121,7 +121,7 @@ export const EditInputLabels = styled.label`
   color: ${({theme}) => theme.colors.labelColors};
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
-    font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSizes.small};
   }
 `;
 

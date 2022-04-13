@@ -6,7 +6,7 @@ export const PrioritySelectorWrapper = styled.div`
   margin-top: 10px;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   background-color: ${({theme}) => theme.colors.white};
 `;
 
@@ -46,7 +46,7 @@ export const SelectorItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   user-select: none;
   
   &:hover {

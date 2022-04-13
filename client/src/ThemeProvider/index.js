@@ -72,6 +72,7 @@ const theme = {
     footerBackground: "#f1f1f1",
     buttonBackgrounds: "rgba(225,225,225,0.82)",
     dataItemBackgrounds: "rgba(236,236,236,0.73)",
+    notificationSuccess: "#009a3e",
   },
   backgrounds: {
     headerBackground: "#151515",

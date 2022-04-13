@@ -23,7 +23,7 @@ export const DataFiltersContainer = styled.div`
 export const JobNameSearchInput = styled.input`
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
   border-radius: 3px;
-  font-size: 14px;
+font-size: ${({ theme }) => theme.fontSizes.small};
   padding: 15px 0 15px 30px;
   outline: none;
 

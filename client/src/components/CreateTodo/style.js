@@ -19,7 +19,7 @@ export const InputLabels = styled.label`
   color: ${({theme}) => theme.colors.labelColors};
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
-    font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSizes.small};
   }
 `;
 
@@ -102,6 +102,6 @@ export const ErrorMessage = styled.span`
   color: ${({theme}) => theme.colors.black};
   margin-top: 20px;
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
-    font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   }
 `;

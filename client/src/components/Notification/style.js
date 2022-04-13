@@ -17,7 +17,7 @@ export const NotificationWrapper = styled.div`
   min-width: 200px;
   height: auto;
   padding: 15px 20px;
-  background-color: green;
+  background-color: ${({ theme }) => theme.colors.notificationSuccess};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.small};
