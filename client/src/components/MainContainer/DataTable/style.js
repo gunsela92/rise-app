@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as ExclamationIcon} from "../../../assets/svg/exclamation.svg";
 
 export const DataTableContainer = styled.div`
   width: calc(100% - 40px);
@@ -95,6 +96,10 @@ export const EditJobInput = styled.input`
   padding: 15px;
   margin-top: 10px;
   border-radius: 3px;
+  
+  &:disabled {
+    color: ${({theme}) => theme.colors.labelColors};
+  }
 `;
 
 export const EditInputLabels = styled.label`
@@ -121,12 +126,12 @@ export const DeleteButtonsWrapper = styled.div`
   margin-top: 30px;
 `;
 
-export const DeleteModalIcon = styled(FontAwesomeIcon)`
+export const DeleteModalIcon = styled(ExclamationIcon)`
   display: block;
   width: 100%;
   height: 35px;
-  color: ${({ theme }) => theme.colors.red};
-  margin-bottom: 10px;
+  margin: 0 auto 15px;
+  fill: ${({ theme }) => theme.colors.urgentColor};
 `;
 
 export const SaveEditButton = styled.button`

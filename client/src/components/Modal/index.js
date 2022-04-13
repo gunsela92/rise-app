@@ -49,7 +49,7 @@ const Modal = ({ show, close, title, type, children }) => {
 
 Modal.propTypes = {
   show: PropTypes.bool.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   close: PropTypes.func.isRequired,
   type: PropTypes.string,
   children: PropTypes.node.isRequired,

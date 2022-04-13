@@ -58,7 +58,7 @@ const theme = {
     red: "#FF0000",
     borderColor: "rgba(210,210,210,0.41)",
     trivialColor: "#1890ff",
-    urgentColor: "#d54755",
+    urgentColor: "#E9406B",
     regularColor: "#E0A800",
     infoColor: "#17A2B8",
     primaryButton: "#1890ff",

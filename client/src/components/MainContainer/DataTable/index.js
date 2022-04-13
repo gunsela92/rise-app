@@ -38,11 +38,8 @@ const DataTable = ({mainData}) => {
   }
 
   const handlePrioritySelect = (priority) => {
-    setEditValues({...editValues, priority: priority});
-  };
-
-  const handleJobName = (value) => {
-    setEditValues({...editValues, title: value});
+    const priorityValue = Priorities.find(p => p?.name === priority)?.id
+    setEditValues({...editValues, priority: priorityValue});
   };
 
   const handleModal = (todo, type) => {
@@ -92,20 +89,23 @@ const DataTable = ({mainData}) => {
         )}
       </DataTableContainer>
       <Modal show={showEdit || showDeleteModal} close={closeModal}
-        title={showEdit ? "Edit job" : <><DeleteModalIcon icon={faCircleExclamation}/> Are you sure you want to
-               delete it?</>}>
+        title={showEdit ? "Edit job" :
+          <>
+            <DeleteModalIcon icon={faCircleExclamation}/> Are you sure you want to delete it?
+          </>
+        }>
         {showEdit && (
           <>
             <EditModalContainer>
               <EditModalInputs>
                 <EditModalInputs>
                   <EditInputLabels>Job Name</EditInputLabels>
-                  <EditJobInput type="text" onChange={(e) => handleJobName(e.target.value)} value={editValues?.title}/>
+                  <EditJobInput type="text" disabled value={editValues?.title}/>
                 </EditModalInputs>
                 <EditModalInputs>
                   <EditInputLabels>Job Priority</EditInputLabels>
                   <PrioritySelector onSelectPriority={handlePrioritySelect}
-                    selectedPriority={getPriorityLang(editValues?.priority)} disabled/>
+                    selectedPriority={getPriorityLang(editValues?.priority)}/>
                 </EditModalInputs>
               </EditModalInputs>
             </EditModalContainer>

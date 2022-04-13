@@ -18,7 +18,7 @@ export const ModalContainer = styled.div`
   top: ${({ show }) => show ? "50%" : "-1500px"};
   transform: translate(-50%,-50%);
   background-color: white;
-  min-height: ${({type}) => type === "error" ? "250px" : type === "edit" ? "200px" : "375px"};
+  min-height: ${({type}) => type === "error" ? "250px" : type === "edit" ? "220px" : "375px"};
   width: ${({type}) => type === "error" ? "400px" : "550px"};
   border-radius: 5px;
   transition: all .5s;
@@ -40,6 +40,7 @@ export const ModalTitle = styled.span`
   text-align: center;
   display: block;
   margin-bottom: 10px;
+  font-weight: bold;
 `;
 
 export const ModalChildren = styled.div`
