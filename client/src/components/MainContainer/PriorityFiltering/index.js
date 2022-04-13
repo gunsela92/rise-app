@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import priorities from "../../PrioritySelector/priorities";
 import PropTypes from "prop-types";
 import {
@@ -36,7 +35,7 @@ const PriorityFiltering = ({ onSelectPriority, selectedPriority }) => {
     <PriorityFilterWrapper>
       <PriorityFilterPlaceHolder onClick={() => setIsActive(!isActive)}>
         {selectedPriority}
-        <PriorityFilterIcon icon={faAngleDown} active={isActive ? 1 : 0} />
+        <PriorityFilterIcon active={isActive ? 1 : 0} />
       </PriorityFilterPlaceHolder>
       <PriorityFilterSelectorWrapper active={isActive} ref={ref}>
         <PriorityFilterItems onClick={() => handleSelect("Priority (all)")}>Priority (all)</PriorityFilterItems>

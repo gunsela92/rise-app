@@ -8,7 +8,6 @@ import {
   ModalContainer,
   ModalHeader, ModalTitle,
 } from "./style";
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({ show, close, title, type, children }) => {
   const ref = useRef();
@@ -35,7 +34,7 @@ const Modal = ({ show, close, title, type, children }) => {
       <ModalContainer show={show} ref={ref} type={type}>
         <ModalHeader>
           <ModalCloseIconWrapper onClick={closeModal}>
-            <ModalCloseIcon icon={faTimes} />
+            <ModalCloseIcon />
           </ModalCloseIconWrapper>
         </ModalHeader>
         <ModalChildren>

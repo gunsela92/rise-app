@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as ArrowIcon} from "../../../assets/svg/arrow.svg";
 
 export const PriorityFilterWrapper = styled.div`
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
@@ -58,8 +58,9 @@ export const PriorityFilterItems = styled.div`
   }
 `;
 
-export const PriorityFilterIcon = styled(FontAwesomeIcon)`
+export const PriorityFilterIcon = styled(ArrowIcon)`
   margin-left: 10px;
   transform: ${({active}) => active ? "rotate(180deg)" : "rotate(0deg)"};
   transition: transform 0.3s ease-in-out;
+  width: 10px;
 `;

@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState} from "react";
 import priorities from "./priorities";
 import {PrioritySelectorWrapper, SelectorIcon, SelectorItems, SelectorPlaceHolder, SelectorWrapper} from "./style";
-import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
-const PrioritySelector = ({ onSelectPriority, selectedPriority, disabled }) => {
+const PrioritySelector = ({ onSelectPriority, selectedPriority, disabled, type }) => {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef(null);
 
@@ -30,9 +29,9 @@ const PrioritySelector = ({ onSelectPriority, selectedPriority, disabled }) => {
     <PrioritySelectorWrapper>
       <SelectorPlaceHolder onClick={() => !disabled && setIsActive(!isActive)} disabled={disabled}>
         {selectedPriority}
-        <SelectorIcon icon={faAngleDown} active={isActive ? 1 : 0} />
+        <SelectorIcon active={isActive ? 1 : 0} />
       </SelectorPlaceHolder>
-      <SelectorWrapper active={isActive} ref={ref}>
+      <SelectorWrapper active={isActive} ref={ref} type={type}>
         {isActive && (
           <>
             {priorities.map((priority, index) => (
@@ -48,11 +47,13 @@ const PrioritySelector = ({ onSelectPriority, selectedPriority, disabled }) => {
 PrioritySelector.propTypes = {
   onSelectPriority: PropTypes.func.isRequired,
   selectedPriority: PropTypes.string.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
 }
 
 PrioritySelector.defaultProps = {
-  disabled: false
+  disabled: false,
+  type: "default"
 }
 
 export default PrioritySelector;

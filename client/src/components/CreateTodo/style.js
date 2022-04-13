@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as PlusSvg} from "../../assets/svg/plus.svg";
+import {ReactComponent as ExclamationIcon} from "../../assets/svg/exclamation.svg";
 
 export const CreateTodoWrapper = styled.div`
   display: block;
@@ -72,9 +73,10 @@ export const CreateButton = styled.button`
   }
 `;
 
-export const PlusIcon = styled(FontAwesomeIcon)`
+export const PlusIcon = styled(PlusSvg)`
   margin-right: 10px;
-  font-size: 18px;
+  width: 18px;
+  fill: ${({theme}) => theme.colors.white};
 `;
 
 export const ErrorModalInner = styled.div`
@@ -86,9 +88,9 @@ export const ErrorModalInner = styled.div`
   flex-direction: column;
 `;
 
-export const ErrorIcon = styled(FontAwesomeIcon)`
+export const ErrorIcon = styled(ExclamationIcon)`
   font-size: 120px;
-  color: ${({theme}) => theme.colors.red};
+  fill: ${({theme}) => theme.colors.red};
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
     font-size: 80px;

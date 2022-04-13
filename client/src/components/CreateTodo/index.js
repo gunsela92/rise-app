@@ -8,7 +8,6 @@ import {
   InputWrapper,
   PlusIcon,
 } from "./style";
-import {faPlus, faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 import PrioritySelector from "../PrioritySelector";
 import {useDispatch} from "react-redux";
 import {addTodo} from "../../redux/DataReducer/actions";
@@ -57,14 +56,14 @@ const CreateTodo = () => {
             <PrioritySelector onSelectPriority={handlePrioritySelect} selectedPriority={selectedPriority}/>
           </InputWrapper>
           <CreateButton type="submit">
-            <PlusIcon icon={faPlus} />
+            <PlusIcon />
             Create
           </CreateButton>
         </InputContainer>
       </CreateTodoWrapper>
       <Modal show={error} close={() => setError(false)} type={"error"} title={"Error !"}>
         <ErrorModalInner>
-          <ErrorIcon icon={faTriangleExclamation} />
+          <ErrorIcon />
           <ErrorMessage>Please fill job name !</ErrorMessage>
         </ErrorModalInner>
       </Modal>

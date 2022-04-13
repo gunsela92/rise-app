@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as SearchIcon} from "../../../assets/svg/search.svg";
 
 export const DataFiltersContainer = styled.div`
   display: grid;
@@ -32,12 +32,12 @@ export const JobNameSearchInput = styled.input`
   }
 `;
 
-export const InputIcon = styled(FontAwesomeIcon)`
+export const InputIcon = styled(SearchIcon)`
   position: absolute;
-  font-size: 14px;
+  width: 14px;
   margin-left: 10px;
   margin-top: -7px;
-  color: ${({theme}) => theme.colors.placeHolderColors};
+  fill: ${({theme}) => theme.colors.placeHolderColors};
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
     margin-top: -36px;

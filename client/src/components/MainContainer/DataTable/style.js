@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {ReactComponent as ExclamationIcon} from "../../../assets/svg/exclamation.svg";
+import {ReactComponent as PenIcon} from "../../../assets/svg/pencil.svg";
+import {ReactComponent as TrashIcon} from "../../../assets/svg/trash.svg";
 
 export const DataTableContainer = styled.div`
   width: calc(100% - 40px);
@@ -62,15 +63,29 @@ export const ActionButtons = styled.div`
   align-items: center;
 `;
 
-export const DataTableButton = styled(FontAwesomeIcon)`
+export const DataTableButton = styled(PenIcon)`
   margin-right: 10px;
   background-color: ${({ theme }) => theme.colors.buttonBackgrounds};
   padding: 10px;
   box-sizing: border-box;
   border-radius: 5px;
-  color: ${({ theme }) => theme.colors.labelColors};
+  fill: ${({ theme }) => theme.colors.labelColors};
   cursor: pointer;
   
+  &:hover {
+    filter: brightness(0.9);
+  }
+`;
+
+export const DataTableDeleteButton = styled(TrashIcon)`
+  margin-right: 10px;
+  background-color: ${({ theme }) => theme.colors.buttonBackgrounds};
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  fill: ${({ theme }) => theme.colors.labelColors};
+  cursor: pointer;
+
   &:hover {
     filter: brightness(0.9);
   }

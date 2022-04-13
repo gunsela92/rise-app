@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as CloseIcon} from "../../assets/svg/close.svg";
 
 export const ModalBackDrop = styled.div`
   background-color: rgba(0, 0, 0, 0.58);
@@ -78,6 +78,6 @@ export const ModalCloseIconWrapper = styled.div`
   }
 `;
 
-export const ModalCloseIcon = styled(FontAwesomeIcon)`
-  font-size: ${({theme}) => theme.fontSizes.medium};
+export const ModalCloseIcon = styled(CloseIcon)`
+  width: ${({theme}) => theme.fontSizes.medium};
 `;

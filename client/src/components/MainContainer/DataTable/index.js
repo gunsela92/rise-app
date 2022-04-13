@@ -4,7 +4,7 @@ import {
   ButtonsWrapper,
   CancelEditButton,
   DataTableButton,
-  DataTableContainer,
+  DataTableContainer, DataTableDeleteButton,
   DataTableItems,
   DataTableTitles,
   DeleteButtonsWrapper,
@@ -16,7 +16,6 @@ import {
   SaveEditButton
 } from "./style";
 import {useDispatch} from "react-redux";
-import {faPen, faTrashCan, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
 import PriorityBadge from "../../PriorityBadge";
 import {deleteTodo, updateTodo} from "../../../redux/DataReducer/actions";
 import {sendMessage} from "../../../redux/Notifications/actions";
@@ -81,8 +80,8 @@ const DataTable = ({mainData}) => {
               <span>{item.title}</span>
               <PriorityBadge priority={item.priority}/>
               <ActionButtons>
-                <DataTableButton icon={faPen} onClick={() => handleModal(item, "edit")}/>
-                <DataTableButton icon={faTrashCan} onClick={() => handleModal(item, "delete")}/>
+                <DataTableButton onClick={() => handleModal(item, "edit")}/>
+                <DataTableDeleteButton onClick={() => handleModal(item, "delete")}/>
               </ActionButtons>
             </DataTableItems>
           ))
@@ -91,7 +90,7 @@ const DataTable = ({mainData}) => {
       <Modal show={showEdit || showDeleteModal} close={closeModal}
         title={showEdit ? "Edit job" :
           <>
-            <DeleteModalIcon icon={faCircleExclamation}/> Are you sure you want to delete it?
+            <DeleteModalIcon/> Are you sure you want to delete it?
           </>
         }>
         {showEdit && (
@@ -104,7 +103,7 @@ const DataTable = ({mainData}) => {
                 </EditModalInputs>
                 <EditModalInputs>
                   <EditInputLabels>Job Priority</EditInputLabels>
-                  <PrioritySelector onSelectPriority={handlePrioritySelect}
+                  <PrioritySelector type={"edit"} onSelectPriority={handlePrioritySelect}
                     selectedPriority={getPriorityLang(editValues?.priority)}/>
                 </EditModalInputs>
               </EditModalInputs>

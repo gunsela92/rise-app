@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as ArrowIcon} from "../../assets/svg/arrow.svg";
 
 export const PrioritySelectorWrapper = styled.div`
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
@@ -26,8 +26,8 @@ export const SelectorWrapper = styled.div`
   border-radius: 3px;
   margin-top: 10px;
   border: ${({theme}) => `1px solid ${theme.colors.inputBorders}`};
-  width: 100%;
-  max-width: 198px;
+  width: ${({type}) => type === "edit" ? "550px" : "100%"};
+  max-width: ${({type}) => type === "edit" ? "calc(100% - 25px)" : "198px"};
   user-select: none;
   background: ${({theme}) => theme.colors.white};
   height: ${({active}) => active ? "auto" : "0"};
@@ -35,7 +35,7 @@ export const SelectorWrapper = styled.div`
   transition: all 0.3s ease-in-out;
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
-    max-width: calc(100% - 42px);
+    max-width: ${({type}) => type === "edit" ? "calc(100% - 25px)" : "calc(100% - 42px);"};
   }
 `;
 
@@ -54,8 +54,9 @@ export const SelectorItems = styled.div`
   }
 `;
 
-export const SelectorIcon = styled(FontAwesomeIcon)`
+export const SelectorIcon = styled(ArrowIcon)`
   margin-left: 10px;
   transform: ${({active}) => active ? "rotate(180deg)" : "rotate(0deg)"};
   transition: transform 0.3s ease-in-out;
+  width: 10px;
 `;

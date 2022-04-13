@@ -1,6 +1,5 @@
 import React from "react";
 import {DataFiltersContainer, InputIcon, JobNameSearchInput} from "./style";
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import PriorityFiltering from "../PriorityFiltering";
 import PropTypes from "prop-types";
 
@@ -8,7 +7,7 @@ const DataFiltering = ({onSelectPriority, selectedPriority, searchValue, onSearc
 
   return (
     <DataFiltersContainer>
-      <InputIcon icon={faSearch}/>
+      <InputIcon />
       <JobNameSearchInput type={"text"} placeholder={"Job Name"} value={searchValue} onChange={(e) => onSearchValue(e.target.value)}/>
       <PriorityFiltering  onSelectPriority={(e) => onSelectPriority(e)} selectedPriority={selectedPriority}/>
     </DataFiltersContainer>
